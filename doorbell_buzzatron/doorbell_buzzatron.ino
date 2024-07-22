@@ -1,7 +1,7 @@
-int switch_pin = 2;
+int switch_pin = 4;
 int led_pin    = LED_BUILTIN;
-int relay_pin  = 4;
-int analog_pin = A7;
+int relay_pin  = 2;
+int analog_pin = A5;
 
 int threshold  = 200;
 
@@ -12,7 +12,7 @@ void setup()
   // put your setup code here, to run once:
   Serial.begin(115200);
   
-  pinMode(switch_pin, INPUT);
+  pinMode(switch_pin, INPUT_PULLUP);
   pinMode(analog_pin, INPUT);
   pinMode(led_pin, OUTPUT);
   pinMode(relay_pin, OUTPUT);
@@ -45,5 +45,5 @@ void loop()
     digitalWrite(led_pin, LOW);
   }
 
-  delay(100);
+  delay(5);
 }
